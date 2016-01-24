@@ -16,11 +16,12 @@ LIST(APPEND CMAKE_PREFIX_PATH ${CMAKE_CURRENT_SOURCE_DIR}/lib/SDL2)
 
 ### Find Libraries
 find_package(OpenGL)
-find_package(SDL2 NO_CMAKE_FIND_ROOT_PATH)
+find_package(SDL2 NO_CMAKE_FIND_ROOT_PATH)  
 add_subdirectory(lib/lodepng lodepng)
 
 if(EMSCRIPTEN)
     set(OPENGL_gl_LIBRARY "")
+    set(SDL2_LIBRARIES "")
 
     EmscriptenCreatePackage(${PROJECT_NAME} DATA_FILE
         PRELOAD ${CMAKE_CURRENT_SOURCE_DIR}/assets@assets
@@ -49,6 +50,8 @@ PRE_JS
 JS_LIBS
     lib/humble/library_cloudfs.jslib
     lib/humble/library_humble.jslib
+ASM_FLAG
+    USE_SDL=2
 PROPERTIES
     FOLDER Executables
     MACOSX_BUNDLE_BUNDLE_NAME "Humble asm.js Demo"
