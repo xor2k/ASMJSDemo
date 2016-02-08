@@ -592,10 +592,14 @@ if(EMSCRIPTEN)
         set(_data_file ${CMAKE_CURRENT_BINARY_DIR}/${output_file}.data)
         set(_preload_file ${CMAKE_CURRENT_BINARY_DIR}/${output_file}.data.js)
 
+        set(_preload_mode "preload")
         set(_mode "none")
         foreach(entry ${ARGN})
             if(entry STREQUAL "PRELOAD")
                 set(_mode "preload")
+            elseif(entry STREQUAL "EMBED")
+                set(_mode "preload")
+                set(_preload_mode "embed")
             elseif(entry STREQUAL "ARGS")
                 set(_mode "args")
             else()
@@ -636,7 +640,7 @@ if(EMSCRIPTEN)
             ARGS
                 ${_data_file}
                 --js-output=${_preload_file}
-                --preload ${preload_map}
+                --${_preload_mode} ${preload_map}
                 ${extra_opts}
         )
         set_source_files_properties(${_data_file} ${_preload_file} PROPERTIES GENERATED TRUE)
