@@ -33,6 +33,7 @@ public:
     void present();
 
     TextureRef load_texture(const std::string& name);
+    TextureRef font_texture(const std::string& name, const std::string& text, int size, const Color& color);
     void draw_texture(TextureRef texture, const Recti& src, const Recti& dst, float angle = 0.0f);
 private:
     void set_draw_color(const Color& c);

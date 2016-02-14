@@ -64,6 +64,15 @@ TextureRef Renderer_SDL2::load_texture(const std::string &name)
     return Texture::NullTexture;
 }
 
+TextureRef Renderer_SDL2::font_texture(const std::string& name, const std::string& text, int size, const Color& color){
+   std::string asset_file = AssetManager::DefaultManager().find_resource(name, "ttf");
+    if (!asset_file.empty()) {
+        TextureRef tex = new Texture_SDL2(*this, asset_file, text, size, { color.r, color.g, color.b, color.a });
+        return tex;
+    }
+    return Texture::NullTexture;
+}
+
 void Renderer_SDL2::draw_texture(TextureRef texture, const Recti& src, const Recti& dst, float angle)
 {
     Texture_SDL2* tex = dynamic_cast<Texture_SDL2*>(texture);

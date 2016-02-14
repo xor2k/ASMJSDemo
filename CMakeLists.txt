@@ -52,6 +52,7 @@ JS_LIBS
     lib/humble/library_humble.jslib
 ASM_FLAG
     USE_SDL=2
+    USE_SDL_TTF=2
 PROPERTIES
     FOLDER Executables
     MACOSX_BUNDLE_BUNDLE_NAME "Humble asm.js Demo"

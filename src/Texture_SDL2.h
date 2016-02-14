@@ -17,5 +17,8 @@ class Texture_SDL2 : public Texture {
     SDL_Texture *m_texture;
 public:
     Texture_SDL2(Renderer_SDL2& rend, const std::string& filename);
+    Texture_SDL2(Renderer_SDL2& rend, const std::string& fontname, const std::string& text, int size, SDL_Color color);
     ~Texture_SDL2();
+private:
+    void consume_surface(Renderer_SDL2& rend, SDL_Surface *surface);
 };

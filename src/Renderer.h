@@ -31,6 +31,7 @@ public:
     virtual void draw_rect_fill(const Recti& r, const Color& c) = 0;
 
     virtual TextureRef load_texture(const std::string& name) = 0;
+    virtual TextureRef font_texture(const std::string& name, const std::string& text, int size, const Color& color) = 0;
     virtual void draw_texture(TextureRef texture, const Vector2i& dst, float angle = 0.0f);
     virtual void draw_texture(TextureRef texture, const Recti& src, const Recti& dst, float angle = 0.0f) = 0;
 

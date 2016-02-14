@@ -1,4 +1,5 @@
 #include <SDL.h>
+#include <SDL_ttf.h>
 
 #ifdef EMSCRIPTEN
 #include <emscripten/emscripten.h>
@@ -79,6 +80,7 @@ int main(int argc, char* argv[])
 #endif
 
     SDL_Init(SDL_INIT_VIDEO);
+    TTF_Init();
 
     int width = 640, height = 480;
 #ifdef USE_HUMBLE_API
