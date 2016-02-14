@@ -57,7 +57,7 @@ void loop_iteration(Game* game)
                 done = true;
                 return;
                 break;
-                
+
             default:
                 break;
         }

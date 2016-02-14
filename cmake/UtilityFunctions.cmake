@@ -353,7 +353,7 @@ function(_BuildDynamicTarget name type)
 endfunction()
 
 ## These two power functions build up library and program targets
-## 
+##
 ## the parameters are simply the target name followed by a list of directories or other parameters
 ## parameters that can be specified
 ## FILES      followed by a list of explicit files/globs to add (or generated files).

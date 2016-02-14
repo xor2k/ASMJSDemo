@@ -16,7 +16,7 @@ LIST(APPEND CMAKE_PREFIX_PATH ${CMAKE_CURRENT_SOURCE_DIR}/lib/SDL2)
 
 ### Find Libraries
 find_package(OpenGL)
-find_package(SDL2 NO_CMAKE_FIND_ROOT_PATH)  
+find_package(SDL2 NO_CMAKE_FIND_ROOT_PATH)
 add_subdirectory(lib/lodepng lodepng)
 
 if(EMSCRIPTEN)
