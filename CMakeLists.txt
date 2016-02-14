@@ -42,9 +42,9 @@ LINK
     ${OPENGL_gl_LIBRARY}
     lodepng
 FLAGS
-    $<$<CXX_COMPILER_ID:GNU>:-std=c++0x>
-    $<$<CXX_COMPILER_ID:Clang>:-std=c++0x>
-    $<$<CXX_COMPILER_ID:AppleClang>:-std=c++0x>
+    $<$<CXX_COMPILER_ID:GNU>:-std=c++11>
+    $<$<CXX_COMPILER_ID:Clang>:-std=c++14>
+    $<$<CXX_COMPILER_ID:AppleClang>:-std=c++14>
 PRE_JS
     ${DATA_FILE}
 JS_LIBS
